@@ -80,8 +80,8 @@ public final class HttpRestProvider implements HttpProvider {
                 throw new RuntimeException(ex);
             }
 
-            urlConnection
-                    .setRequestProperty("Content-Type", "application/json");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setRequestProperty("Accept", "application/json");
 
             for (Entry<String, String> entry : defaultHeaders.entrySet()) {
                 urlConnection.setRequestProperty(entry.getKey(), entry
