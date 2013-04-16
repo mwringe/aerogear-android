@@ -43,6 +43,11 @@ public final class HttpRestProvider implements HttpProvider {
     private final URL url;
     private final Map<String, String> defaultHeaders = new HashMap<String, String>();
     private final Integer timeout;
+    private final static java.net.CookieManager cm = new java.net.CookieManager();
+    
+    static {
+    	java.net.CookieHandler.setDefault(cm);
+    }
     /**
      * The get method of this provider optionally takes a String which is the id 
      * in a restful URL
